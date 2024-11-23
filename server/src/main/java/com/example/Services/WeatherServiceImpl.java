@@ -10,7 +10,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 @Service
 public class WeatherServiceImpl implements WeatherService {
     private static final String OPEN_WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather";
-    private final String apiKey = "__API_KEY___"; // Replace with your OpenWeather API key
+    private final String apiKey = System.getenv("API_KEY"); // Replace with your OpenWeather API key
 
     @Override
     public ResponseEntity<String> getWeather(String city, String unitMeasurement) {
